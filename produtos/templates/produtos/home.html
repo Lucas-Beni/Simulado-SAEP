@@ -1,9 +1,63 @@
-{% if user.is_authenticated %}
-    Olá {{user.username}}!
-    <form method="post" action="{% url 'logout' %}">
-        {% csrf_token %}
-        <button type="submit">logout</button>
-    </form>
-{% else %}
-    <button onclick="window.location.href='{% url 'login' %}'">
-{% endif %}
+Olá {{user.username}}!
+<button onclick="window.location.href='{% url 'criar-produto' %}'">Cadastrar novo produto</button>
+<button onclick="window.location.href='{% url 'criar-categoria' %}'">Cadastrar nova categoria</button>
+<button onclick="window.location.href='{% url 'adicionar-entrada' %}'">Adicionar Entrada</button>
+<button onclick="window.location.href='{% url 'adicionar-saida' %}'">Adicionar Saida</button>
+<form method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit">logout</button>
+</form>
+
+<table>
+    <thead>
+        <th>id</th>
+        <th>nome</th>
+        <th>descrição</th>
+        <th>altura</th>
+        <th>largura</th>
+        <th>peso</th>
+        <th>material</th>
+        <th>categorias</th>
+        <th>estoque de segurança</th>
+        <th>estoque</th>
+        <th>status</th>
+        <th>ativo</th>
+    </thead>
+    <tbody>
+        {% for produto in produtos %}
+            <tr>
+                <td>{{produto.id}}</td>
+                <td>{{produto.nome}}</td>
+                <td>{{produto.descricao}}</td>
+                <td>{{produto.altura}}</td>
+                <td>{{produto.largura}}</td>
+                <td>{{produto.peso}}</td>
+                <td>{{produto.material}}</td>
+                <td>
+                    {% for categoria in produto.categorias.all %}
+                        {{ categoria.nome }}{% if not forloop.last %}, {% endif %}
+                    {% empty %}
+                        <em>Sem categorias</em>
+                    {% endfor %}
+                </td>
+                <td>{{produto.estoque_seguranca}}</td>
+                <td>{{produto.estoque_atual}}</td>
+                <td>
+                    {% if produto.estoque_atual < produto.estoque_seguranca %}
+                        Alerta
+                    {% else %}
+                        OK
+                    {% endif %}
+                </td>
+                <td>
+                    {% if produto.is_active == True %}
+                        Ativo
+                    {% else %}
+                        Inativo
+                    {% endif %}
+                </td>
+                <td><button onclick="window.location.href='{% url 'editar-produto' produto.pk %}'">Editar</button></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

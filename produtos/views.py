@@ -1,5 +1,30 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import CreateView, ListView, UpdateView
+from .models import Produto, Categoria
+from .forms import ProdutoForm, CategoriaForm
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
 
-class Home(TemplateView):
+class Home(LoginRequiredMixin, ListView):
+    model = Produto
     template_name = "produtos/home.html"
+    context_object_name = "produtos"
+    ordering = ['id']
+
+class CriarProduto(LoginRequiredMixin, CreateView):
+    model = Produto
+    form_class = ProdutoForm
+    template_name = "produtos/cadastrar-produto.html"
+    success_url = reverse_lazy('home')
+
+class EditarProduto(LoginRequiredMixin, UpdateView):
+    model = Produto
+    form_class = ProdutoForm
+    template_name = "produtos/cadastrar-produto.html"
+    success_url = reverse_lazy('home')
+
+class CriarCategoria(LoginRequiredMixin, CreateView):
+    model = Categoria
+    form_class = CategoriaForm
+    template_name = "produtos/cadastrar-categoria.html"
+    success_url = reverse_lazy('home')
