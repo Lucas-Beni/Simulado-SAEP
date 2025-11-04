@@ -62,3 +62,10 @@ class LoginForm(AuthenticationForm):
         label="Email",
         widget=forms.EmailInput(attrs={"autofocus": True})
     )
+
+    error_messages = {
+        'invalid_login': (
+            "E-mail ou senha incorretos. Verifique suas credenciais e tente novamente."
+        ),
+        'inactive': ("Esta conta está inativa."),
+    }
