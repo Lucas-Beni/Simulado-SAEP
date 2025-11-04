@@ -1,5 +1,10 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/cadastro.css' %}">
+
+
 <form method="post">
     {% csrf_token %}
+    <h2>Cadastro</h2>
     {{form.as_p}}
     <button type="submit">Cadastrar</button>
 </form>
