@@ -1,5 +1,10 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/add_produto.css' %}">
+
+<button type="button" class="btn-voltar" onclick="window.location.href='{% url 'home' %}'">← Voltar à tela principal</button>
+
 <form method='post'>
     {% csrf_token %}
-    {{form.as_p}}
+    {{ form.as_p }}
     <button type='submit'>Cadastrar</button>
 </form>

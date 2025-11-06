@@ -1,12 +1,17 @@
-<h2>
-  {% if tipo_movimentacao == "entrada" %}
-    Registrar Entrada
-  {% else %}
-    Registrar Saída
-  {% endif %}
-</h2>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/mov.css' %}">
+
+<button type="button" class="btn-voltar" onclick="window.location.href='{% url 'home' %}'">← Voltar à tela principal</button>
 
 <form method="post">
+  <h2>
+    {% if tipo_movimentacao == "entrada" %}
+      Registrar Entrada
+    {% else %}
+      Registrar Saída
+    {% endif %}
+  </h2>
+
   {% csrf_token %}
   {{ form.as_p }}
   <button type="submit" class="btn btn-primary">Salvar</button>
