@@ -5,14 +5,14 @@ body {
     padding: 20px;
 }
 
-/* Saudação */
+
 h2 {
     text-align: center;
     color: #333;
     margin-bottom: 20px;
 }
 
-/* Botões */
+
 button {
     background-color: #3b82f6;
     color: white;
@@ -28,7 +28,7 @@ button:hover {
     background-color: #2563eb;
 }
 
-/* Logout vermelho */
+
 form button[type="submit"] {
     background-color: #ef4444;
 }
@@ -37,10 +37,10 @@ form button[type="submit"]:hover {
     background-color: #dc2626;
 }
 
-/* Barra de pesquisa */
+
 form[method='get'] {
     display: flex;
-    justify-content: flex-start; /* ← Alinha à esquerda */
+    justify-content: flex-start; 
     margin: 15px 0 25px 0;
 }
 
@@ -65,7 +65,7 @@ form[method='get'] input[type='text']:focus {
     box-shadow: 0 0 4px rgba(59, 130, 246, 0.4);
 }
 
-/* Tabela */
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -74,7 +74,6 @@ table {
     margin-top: 10px;
 }
 
-/* Centraliza conteúdo da tabela */
 th, td {
     padding: 10px;
     border-bottom: 1px solid #ddd;
