@@ -122,7 +122,7 @@ Desenvolvedores Full Stack Django
 📧 Contato: rianprates894@gmail.com <br>
 📧 Contato: lucgarcbeni@gmail.com
 
-
+---
 
 ## 📄 Licença
 
