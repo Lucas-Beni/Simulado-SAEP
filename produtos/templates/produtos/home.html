@@ -14,7 +14,9 @@
             <button type="submit">Logout</button>
         </form>
     </div>
-
+    <form method='get'>
+        <input type="text" name="pesquisa" placeholder="Pesquisar..." value="{{ request.GET.pesquisa }}">
+    </form>
     <table>
         <thead>
             <tr>

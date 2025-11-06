@@ -1,19 +1,10 @@
 from django import forms
-from django.forms.widgets import ClearableFileInput
 from .models import Produto, Categoria
-
-class CustomClearableFileInput(ClearableFileInput):
-    initial_text = "Imagem atual"
-    input_text = "Alterar"
-    clear_checkbox_label = "Remover"
 
 class ProdutoForm(forms.ModelForm):
     class Meta:
         model = Produto
-        fields = ["nome", "descricao", "altura", "largura", "peso", "material", "categorias", "imagem_principal", "is_active"]
-        widgets = {
-            "imagem_principal": CustomClearableFileInput
-        }
+        fields = ["nome", "descricao", "altura", "largura", "peso", "material", "categorias", "is_active"]
         labels = {
             "is_active": "Ativo"
         }

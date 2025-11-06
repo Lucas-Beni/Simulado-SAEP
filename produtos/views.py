@@ -11,6 +11,16 @@ class Home(LoginRequiredMixin, ListView):
     context_object_name = "produtos"
     ordering = ['id']
 
+    def get_queryset(self): # método padrão do django para filtragem
+        queryset = super().get_queryset()
+
+        pesquisa = self.request.GET.get('pesquisa')
+
+        if pesquisa:
+            queryset = queryset.filter(nome__icontains=pesquisa)
+
+        return queryset
+
 class CriarProduto(LoginRequiredMixin, CreateView):
     model = Produto
     form_class = ProdutoForm

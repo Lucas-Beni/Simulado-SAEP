@@ -15,7 +15,6 @@ class Produto(models.Model):
     peso = models.DecimalField(decimal_places=1, max_digits=5)
     material = models.CharField(max_length=20)
     categorias = models.ManyToManyField(Categoria, related_name="produtos")
-    imagem_principal = models.ImageField(upload_to="produtos/principal/", null=True, blank=True)
     is_active = models.BooleanField(default=True)
 
     @property
