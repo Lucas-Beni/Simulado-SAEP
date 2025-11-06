@@ -113,7 +113,7 @@ Os casos de teste estão descritos conforme o item **ENTREGA 8** da documentaç�
 
 ## 👤 Autores
 
-**Rian Silva** <br>
+**Rian Prates** <br>
 **Lucas Beni**  
 
 Desenvolvedores Full Stack Django 
