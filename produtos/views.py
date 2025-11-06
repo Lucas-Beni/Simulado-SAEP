@@ -9,7 +9,7 @@ class Home(LoginRequiredMixin, ListView):
     model = Produto
     template_name = "produtos/home.html"
     context_object_name = "produtos"
-    ordering = ['id']
+    ordering = ['nome']
 
     def get_queryset(self): # método padrão do django para filtragem
         queryset = super().get_queryset()
@@ -17,7 +17,7 @@ class Home(LoginRequiredMixin, ListView):
         pesquisa = self.request.GET.get('pesquisa')
 
         if pesquisa:
-            queryset = queryset.filter(nome__icontains=pesquisa)
+            queryset = queryset.filter(nome__istartswith=pesquisa)
 
         return queryset
 

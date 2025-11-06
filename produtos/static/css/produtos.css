@@ -37,6 +37,34 @@ form button[type="submit"]:hover {
     background-color: #dc2626;
 }
 
+/* Barra de pesquisa */
+form[method='get'] {
+    display: flex;
+    justify-content: flex-start; /* ← Alinha à esquerda */
+    margin: 15px 0 25px 0;
+}
+
+form[method='get'] input[type='text'] {
+    width: 300px;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+}
+
+form[method='get'] input[type='text']::placeholder {
+    color: #aaa;
+}
+
+form[method='get'] input[type='text']:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 4px rgba(59, 130, 246, 0.4);
+}
+
 /* Tabela */
 table {
     width: 100%;
@@ -50,8 +78,8 @@ table {
 th, td {
     padding: 10px;
     border-bottom: 1px solid #ddd;
-    text-align: center; /* ← Centraliza horizontalmente */
-    vertical-align: middle; /* ← Centraliza verticalmente */
+    text-align: center;
+    vertical-align: middle;
     font-size: 14px;
 }
 
