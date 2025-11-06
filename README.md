@@ -111,17 +111,17 @@ Os casos de teste estão descritos conforme o item **ENTREGA 8** da documentaç�
 
 ---
 
-## 👤 Autor
+## 👤 Autores
 
-**Rian Silva**
-' **Lucas Beni**
+**Rian Silva** <br>
+**Lucas Beni**  
 
-Desenvolvedores Full Stack Django
-' 📧 Contato: rianprates894@gmail.com
-' 📧 Contato: lucgarcbeni@gmail.com
+Desenvolvedores Full Stack Django  
+
+📧 Contato: rianprates894@gmail.com <br>
+📧 Contato: lucgarcbeni@gmail.com
 
 
----
 
 ## 📄 Licença
 
